@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/* ============================================
+   ESTILO LINEAR -_CONFIGURATION
+   ============================================ */
+
+:root {
+  /* Colores Light (Linear-inspired) */
+  --background: #FAFAFA;
+  --foreground: #111111;
+  
+  /* Superficies */
+  --surface: #FFFFFF;
+  --surface-hover: #F5F5F5;
+  
+  /* Bordes */
+  --border: #E5E5E5;
+  --border-hover: #D4D4D4;
+  
+  /* Acento (Violeta/Purple Linear) */
+  --accent: #5E6AD2;
+  --accent-hover: #4B55B8;
+  --accent-foreground: #FFFFFF;
+  
+  /* Texto */
+  --text-primary: #111111;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  
+  /* Estados */
+  --destructive: #DC2626;
+  --destructive-hover: #B91C1C;
+  --success: #10B981;
+  --warning: #F59E0B;
+  
+  /* Radio */
+  --radius: 8px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-destructive: var(--destructive);
+  --color-destructive-hover: var(--destructive-hover);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+}
+
+/* Dark mode (opcional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #101013;
+    --foreground: #FAFAFA;
+    --surface: #18181B;
+    --surface-hover: #27272A;
+    --border: #27272A;
+    --border-hover: #3F3F46;
+    --text-primary: #FAFAFA;
+    --text-secondary: #A1A1AA;
+    --text-tertiary: #71717A;
+  }
+}
+
+/* Base styles */
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: "Inter", "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
